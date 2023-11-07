@@ -12,41 +12,41 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-// Ruta principal que muestra la pantalla principal
+// Pantalla principal
 Route::get('/', function () {
     return "Pantalla principal";
 });
-// Ruta para mostrar el formulario de inicio de sesión
+// Inicio de sesión
 Route::get('login', function () {
     return "Login usuario";
 });
 
-// Ruta para cerrar sesión
+// Cerrar sesión
 Route::get('logout', function () {
     return "Logout usuario";
 });
 
-// Ruta para listar proyectos
+// Listar proyectos
 Route::get('proyectos', function () {
     return "Listado proyectos";
 });
 
-// Ruta para ver el detalle de un proyecto por su ID
+// Ver el detalle de un proyecto por su ID
 Route::get('proyectos/show/{id}', function ($id) {
     return "Vista detalle proyecto $id";
 })->where('id', '[0-9]+'); // Asegura que {id} sea un número natural
 
-// Ruta para añadir un proyecto
+// Añadir un proyecto
 Route::get('proyectos/create', function () {
     return "Añadir proyecto";
 });
 
-// Ruta para editar un proyecto por su ID
+//Editar un proyecto por su ID
 Route::get('proyectos/edit/{id}', function ($id) {
     return "Modificar proyecto $id";
 })->where('id', '[0-9]+'); // Asegura que {id} sea un número natural
 
-// Ruta para ver el currículo, ya sea propio o de otro usuario
+// Ver el currículo
 Route::get('perfil/{id?}', function ($id = null) {
     if ($id !== null) {
         return "Visualizar el currículo de $id";
